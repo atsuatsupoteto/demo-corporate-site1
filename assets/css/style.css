@@ -1,3 +1,72 @@
-.section {
-  padding: 80px 20px;
+/* 初期設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ヘッダー */
+header nav {
+  display: flex;
+  justify-content: space-between; /* 左：ロゴ+メニュー / 右：お問合せボタン */
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* ロゴとメニューの間 */
+  padding: 20px;
+  height: 80px;
+  font-size: 16px;
+}
+
+xheader nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.btn-contact {
+  background: #000000;
+  color: #fff;
+  text-decoration: none;
+  display: flex;                
+  align-items: center;          
+  justify-content: center;    
+  height: 80px;
+  padding: 0 64px;
+  font-size: 12px;
+}
+
+/* ヒーローセクション */
+.hero picture,
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* h1タグはSEOのために入れており、画面では不要なため非表示 */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+/* NEWSセクション */
+.news {
+  
 }
