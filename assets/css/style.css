@@ -1,3 +1,180 @@
-.section {
-  padding: 80px 20px;
+/* 初期設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 共通 */
+html, body {
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3",
+    "Hiragino Sans",
+    "ヒラギノ角ゴシック",
+    "Yu Gothic",
+    "游ゴシック",
+    "Meiryo",
+    sans-serif;
+  line-height: 1.6;
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
+}
+a {
+  text-decoration: none;
+  color: inherit; /* 基本は親の色をそのまま使う */
+}
+button, a {
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+section {
+  padding: 60px 0;
+}
+/* ※ヒーローセクションのみ上部の余白は不要 */
+#hero {
+  padding-top: 0;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 0.3em; /* 文字間隔 */
+}
+.sub-title{
+  font-size: 14px;
+}
+
+/* ヘッダー */
+header nav {
+  display: flex;
+  justify-content: space-between; /* 左：ロゴ+メニュー / 右：お問合せボタン */
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* ロゴとメニューの間 */
+  padding: 20px;
+  height: 80px;
+  font-size: 14px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: #000000;
+}
+
+.btn-contact {
+  background: #000000;
+  color: #fff;
+  display: flex;                
+  align-items: center;          
+  justify-content: center;    
+  height: 80px;
+  padding: 0 64px;
+  font-size: 12px;
+}
+
+/* ヒーローセクション */
+.hero picture,
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* h1タグはSEOのために入れており、画面では不要なため非表示 */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+/* NEWSセクション */
+.section.news {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: left;
+}
+
+/* 横並び 3カラム */
+.news-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 80px; /* 指定どおり */
+  margin-top: 40px;
+}
+
+/* NEWSアイテム */
+.news-item {
+  flex: 1; /* 均等幅にする */
+  position: relative;
+  padding-right: 40px; /* 仕切り線との間 */
+}
+
+/* 仕切り線（右だけつける） */
+.news-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #ccc; /* 縦線の色 */
+}
+
+/* クリック範囲はブロック化 */
+.news-item a {
+  display: block;
+  color: #000000;
+}
+/* 日付 */
+.news-item time {
+  font-size: 14px;
+  color: #000000;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* タイトル */
+.news-title {
+  font-size: 14px;
+  color: #000000;
+}
+
+/* ABOUTセクション */
+.about-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* 必要最小限の余白 */
+}
+
+.about-left,
+.about-right {
+  flex: 1; /* 50%ずつにする簡易指定 */
+}
+
+.about-left picture,
+.about-left img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
