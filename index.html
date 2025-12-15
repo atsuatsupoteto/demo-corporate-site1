@@ -5,24 +5,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>profile site</title>
+  <title>demo corporate site</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
   <header>
     <nav>
-      <picture>
-        <source srcset="assets/image/sp/logo.png" media="(max-width: 767px)">
-        <source srcset="assets/image/pc/logo.png" media="(min-width: 768px)">
-        <img src="assets/image/pc/logo.png" alt="WEDアイコン">
-      </picture>
-      <ul>
-        <li><a href="#news">NEWS</a></li>
-        <li><a href="#about">ABOUTl</a></li>
-        <li><a href="#business">BUSINESS</a></li>
-        <li><a href="#company">COMPANY</a></li>
-      </ul>
+       <div class="nav-left">
+        <picture>
+          <source srcset="assets/image/sp/logo.png" media="(max-width: 767px)">
+          <source srcset="assets/image/pc/logo.png" media="(min-width: 768px)">
+          <img src="assets/image/pc/logo.png" alt="WEDアイコン">
+        </picture>
+        <ul>
+         <li><a href="#news">NEWS</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#business">BUSINESS</a></li>
+          <li><a href="#company">COMPANY</a></li>
+        </ul>
+      </div>
+      <a href="/contact" class="btn-contact">お問合せ</a>
     </nav>
   </header>
   <main>
@@ -60,17 +63,26 @@
       </div>
     </section>
 
-    <section id="about" class="section about">
-      <h2>ABOUT</h2>
-      <p class="sub-title">私たちについて</p>
-      <p>私たちは○○を目指して活動している会社です。お客様の課題解決を第一に考え、質の高いサービスを提供しています。</p>
-      <p>チーム一丸となってプロジェクトに取り組み、信頼されるパートナーとして価値を届けます。</p>
+<section id="about" class="section about">
+  <div class="about-inner">
+
+    <div class="about-left">
       <picture>
         <source srcset="assets/image/sp/about.png" media="(max-width: 767px)">
         <source srcset="assets/image/pc/about.png" media="(min-width: 768px)">
         <img src="assets/image/pc/about.png" alt="私たちについてのイメージ">
       </picture>
-    </section>
+    </div>
+
+    <div class="about-right">
+      <h2>ABOUT</h2>
+      <p class="sub-title">私たちについて</p>
+      <p>私たちは○○を目指して活動している会社です。お客様の課題解決を第一に考え、質の高いサービスを提供しています。</p>
+      <p>チーム一丸となってプロジェクトに取り組み、信頼されるパートナーとして価値を届けます。</p>
+    </div>
+
+  </div>
+</section>
 
     <section id="business" class="section business">
       <h2>BUSINESS</h2>
