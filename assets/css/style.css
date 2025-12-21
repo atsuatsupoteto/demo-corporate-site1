@@ -15,6 +15,7 @@ body {
   font-size: 14px;
   font-weight: 300;
   color: #000;
+  background-color: #f0f0f0;
 }
 a {
   text-decoration: none;
@@ -160,12 +161,15 @@ nav a {
 .about-inner {
   display: flex;
   align-items: center;
-  gap: 40px; /* 必要最小限の余白 */
+  gap: 72px;
 }
 
 .about-left,
 .about-right {
   flex: 1; /* 50%ずつにする簡易指定 */
+}
+.about-right {
+  padding-top: 180px;
 }
 
 .about-left picture,
@@ -174,21 +178,110 @@ nav a {
   height: auto;
   display: block;
 }
+.about-contents {
+  max-width: 480px;
+  padding-top: 64px;
+}
 
 /* 事業内容 */
+.section.business {
+  max-width: 940px;
+  margin: 0 auto;
+  text-align: left;
+}
 .business-list {
   display: flex;
-  flex-direction: column;
-  gap: 80px;
+  gap: 64px;
+  max-width: 940px;
+  margin: 0 auto;
 }
-.business-item {
+.business-left,
+.business-right {
   display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
-/* 奇数：右寄せ */
-.business-item:nth-child(odd) {
-  justify-content: flex-end;
+.business-left {
+  padding-top: 150px;
 }
-/* 偶数：左寄せ（デフォルトだが明示） */
-.business-item:nth-child(even) {
-  justify-content: flex-start;
+
+/* 会社情報 */
+.company.section {
+  max-width: 940px;
+  margin: 0 auto;
+  text-align: left;
+}
+.company-contents {
+  display: flex;
+  align-items: center;
+}
+.company-left {
+  min-width: 624px;
+  background-color: #ffffff;
+  padding: 100px 62px;
+  position: relative;
+  z-index: 1;
+}
+
+.company-right {
+  left: -100px;
+  position: relative;
+  z-index: 2;
+}
+
+.company-info {
+  display: grid;
+  grid-template-columns: 56px 1fr; /* 左：56px固定 / 右：可変 */
+  row-gap: 12px;
+  column-gap: 32px;
+  padding-top: 64px;
+}
+
+.company-info dt {
+  font-weight: bold;
+}
+
+.company-info dd {
+  margin: 0; /* ブラウザのデフォルト打ち消し */
+}
+
+.company-info li {
+  margin-bottom: 12px;
+}
+
+/* フッター */
+.footer {
+  background-color: #ffffff;
+  padding: 40px 0 20px;
+  font-size: 14px;
+}
+
+.footer-inner {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+/* 上段：ロゴ＋住所 */
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ロゴ */
+.footer-logo img {
+  display: block;
+  max-width: 160px;
+}
+
+/* 住所 */
+.footer-address {
+  text-align: left;
+}
+
+/* コピーライト */
+.muted {
+  margin-top: 40px;
+  font-size: 10px;
 }
