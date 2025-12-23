@@ -217,6 +217,7 @@ nav a {
   margin: 0 auto;
   text-align: left;
 }
+
 .company-contents {
   display: flex;
   flex-direction: column;
@@ -375,6 +376,8 @@ nav a {
   .company-contents {
     flex-direction: row;
     align-items: center;
+    position: relative;
+    left: -100px;
   }
 
   .company-detail {
