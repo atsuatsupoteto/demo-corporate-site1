@@ -217,6 +217,7 @@ nav a {
   margin: 0 auto;
   text-align: left;
 }
+
 .company-contents {
   display: flex;
   flex-direction: column;
@@ -349,11 +350,15 @@ nav a {
   .about-inner {
     flex-direction: row;
     align-items: center;
-    gap: 72px;
+    gap: 68px;
   }
 
   .about-contents {
     padding-top: 180px;
+  }
+
+  .about-img {
+    max-width: 770px;
   }
 
   .about-img img {
@@ -375,6 +380,8 @@ nav a {
   .company-contents {
     flex-direction: row;
     align-items: center;
+    position: relative;
+    left: -100px;
   }
 
   .company-detail {
