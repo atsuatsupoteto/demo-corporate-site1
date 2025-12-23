@@ -29,11 +29,14 @@ ul {
   list-style: none;
 }
 section {
-  padding: 60px 0;
+  padding: 60px 16px;
 }
-/* ※ヒーローセクションのみ上部の余白は不要 */
+.section-last {
+  padding-bottom: 0;
+}
+/* ※ヒーローセクションのみ余白は不要 */
 #hero {
-  padding-top: 0;
+  padding: 0;
 }
 h2 {
   font-size: 36px;
@@ -45,40 +48,42 @@ h2 {
 }
 
 /* ヘッダー */
-header nav {
-  display: flex;
-  justify-content: space-between; /* 左：ロゴ+メニュー / 右：お問合せボタン */
-  align-items: center;
+nav {
+  max-height: 80px;
+}
+.header-logo {
+  align-self: flex-start;
 }
 
 .nav-left {
   display: flex;
+  flex-direction: column; /* SPは縦 */
   align-items: center;
-  gap: 60px; /* ロゴとメニューの間 */
-  padding: 20px;
-  height: 80px;
-  font-size: 14px;
+  padding: 16px;
 }
 
 header nav ul {
   display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+  width: 100%;
 }
+
+header nav ul li {
+  flex: 1;
+}
+
+header nav ul a {
+  display: block;
+}
+
 nav a {
   color: #000000;
 }
 
+/* SPではCONTACT非表示 */
 .btn-contact {
+  display: none;
   background: #000000;
   color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  padding: 0 64px;
-  font-size: 12px;
 }
 
 /* ヒーローセクション */
@@ -107,35 +112,25 @@ nav a {
   max-width: 940px;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 20px;
   text-align: left;
 }
 
 /* 横並び 3カラム */
 .news-list {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 80px; /* 指定どおり */
+  flex-direction: column;
+  gap: 24px;
   margin-top: 40px;
 }
 
 /* NEWSアイテム */
 .news-item {
-  flex: 1; /* 均等幅にする */
   position: relative;
-  padding-right: 40px; /* 仕切り線との間 */
 }
 
-/* 仕切り線（右だけつける） */
-.news-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background: #ccc; /* 縦線の色 */
+/* SPでは仕切り線なし */
+.news-item::after {
+  display: none;
 }
 
 /* クリック範囲はブロック化 */
@@ -160,20 +155,26 @@ nav a {
 /* ABOUTセクション */
 .about-inner {
   display: flex;
-  align-items: center;
-  gap: 72px;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.about-left,
-.about-right {
+.about-img,
+.about-contents {
   flex: 1; /* 50%ずつにする簡易指定 */
 }
-.about-right {
-  padding-top: 180px;
+
+.about-img {
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
-.about-left picture,
-.about-left img {
+.about-contents {
+  padding-top: 0;
+}
+
+.about-img picture,
+.about-img img {
   width: 100%;
   height: auto;
   display: block;
@@ -191,8 +192,8 @@ nav a {
 }
 .business-list {
   display: flex;
-  gap: 64px;
-  max-width: 940px;
+  flex-direction: column;
+  gap: 32px;
   margin: 0 auto;
 }
 .business-left,
@@ -202,7 +203,12 @@ nav a {
   gap: 50px;
 }
 .business-left {
-  padding-top: 150px;
+  padding-top: 0;
+}
+
+.business-left img,
+.business-right img {
+  width: 100%;
 }
 
 /* 会社情報 */
@@ -213,20 +219,20 @@ nav a {
 }
 .company-contents {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 32px;
 }
-.company-left {
-  min-width: 624px;
+.company-detail {
+  min-width: auto;
   background-color: #ffffff;
-  padding: 100px 62px;
+  padding: 40px 20px;
   position: relative;
   z-index: 1;
 }
 
-.company-right {
-  left: -100px;
-  position: relative;
-  z-index: 2;
+.company-img img {
+  display: block;
+  width: 100%;
 }
 
 .company-info {
@@ -252,7 +258,7 @@ nav a {
 /* フッター */
 .footer {
   background-color: #ffffff;
-  padding: 40px 0 20px;
+  padding: 48px 16px 20px;
   font-size: 14px;
 }
 
@@ -264,9 +270,8 @@ nav a {
 /* 上段：ロゴ＋住所 */
 .footer-info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* ロゴ */
@@ -284,4 +289,121 @@ nav a {
 .muted {
   margin-top: 40px;
   font-size: 10px;
+}
+
+/* ===== PC ===== */
+@media (min-width: 768px) {
+  /* ヘッダー */
+  header nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .nav-left {
+    flex-direction: row; /* 横に戻す */
+    gap: 60px;
+    padding: 20px;
+    height: 80px;
+  }
+
+  header nav ul {
+    width: auto;
+    gap: 30px;
+  }
+
+  .btn-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    padding: 0 64px;
+    font-size: 12px;
+  }
+
+  /* NEWS */
+  .news-list {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 80px; /* 指定どおり */
+  }
+
+  .news-item {
+    flex: 1; /* 均等幅にする */
+    padding-right: 40px; /* 仕切り線との間 */
+  }
+
+  .news-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: #ccc; /* 縦線の色 */
+    display: block;
+  }
+
+  /* ABOUT */
+  .about-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 72px;
+  }
+
+  .about-contents {
+    padding-top: 180px;
+  }
+
+  .about-img img {
+    width: auto;
+  }
+
+  /* 事業内容 */
+  .business-list {
+    flex-direction: row;
+    gap: 64px;
+    max-width: 940px;
+  }
+
+  .business-left {
+    padding-top: 150px;
+  }
+
+  /* 会社情報 */
+  .company-contents {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .company-detail {
+    min-width: 624px;
+    padding: 100px 62px;
+  }
+
+  .company-img {
+    left: -100px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .company-img img {
+    width: auto;
+  }
+
+  .section-last {
+    padding-bottom: 128px;
+  }
+
+  /* フッター */
+  .footer {
+    padding: 40px 0 20px;
+  }
+  .footer-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
 }

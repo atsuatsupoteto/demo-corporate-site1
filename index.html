@@ -13,13 +13,15 @@
   <header>
     <nav>
       <div class="nav-left">
-        <a href="index.html">
-          <picture>
-            <source srcset="assets/image/sp/logo.png" media="(max-width: 767px)">
-            <source srcset="assets/image/pc/logo.png" media="(min-width: 768px)">
-            <img src="assets/image/pc/logo.png" alt="WEDアイコン">
-          </picture>
-        </a>
+        <div class="header-logo">
+          <a href="index.html">
+            <picture>
+              <source srcset="assets/image/sp/logo.png" media="(max-width: 767px)">
+              <source srcset="assets/image/pc/logo.png" media="(min-width: 768px)">
+              <img src="assets/image/pc/logo.png" alt="WEDアイコン">
+            </picture>
+          </a>
+        </div>
         <ul>
           <li><a href="#news">NEWS</a></li>
           <li><a href="#about">ABOUT</a></li>
@@ -68,7 +70,7 @@
     <section id="about" class="section about">
       <div class="about-inner">
 
-        <div class="about-left">
+        <div class="about-img">
           <picture>
             <source srcset="assets/image/sp/about.png" media="(max-width: 767px)">
             <source srcset="assets/image/pc/about.png" media="(min-width: 768px)">
@@ -76,10 +78,10 @@
           </picture>
         </div>
 
-        <div class="about-right">
+        <div class="about-contents">
           <h2>ABOUT</h2>
           <p class="sub-title">私たちについて</p>
-          <div class="about-contents">
+          <div class="about-discription">
             <p>私たちは○○を目指して活動している会社です。お客様の課題解決を第一に考え、質の高いサービスを提供しています。</p>
             <p>チーム一丸となってプロジェクトに取り組み、信頼されるパートナーとして価値を届けます。</p>
           </div>
@@ -136,9 +138,9 @@
       </div>
     </section>
 
-    <section id="company" class="section company">
+    <section id="company" class="section company section-last">
       <div class="company-contents">
-        <div class="company-left">
+        <div class="company-detail">
           <h2>COMPANY</h2>
           <p class="sub-title">会社情報</p>
 
@@ -169,7 +171,7 @@
             </dd>
           </dl>
         </div>
-        <div class="company-right">
+        <div class="company-img">
           <picture>
             <source srcset="assets/image/sp/maskGroup.png" media="(max-width: 767px)">
             <source srcset="assets/image/pc/maskGroup.png" media="(min-width: 768px)">
